@@ -39,7 +39,7 @@ function AddTask() {
         setIsSubmitting(true);
         setSubmitError(null);
         
-        // Create new task with initial status as pending and attach userId
+      
         await createTask({
           name,
           description,
@@ -48,7 +48,7 @@ function AddTask() {
           userId: user.id // Associate task with current user
         });
         
-        // Navigate back to dashboard after successful submission
+      
         navigate('/');
       } catch (err) {
         setSubmitError('Failed to create task. Please try again.');
