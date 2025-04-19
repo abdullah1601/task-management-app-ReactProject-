@@ -13,17 +13,17 @@ function Dashboard({ onLogout }) {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   
-  // Get user from localStorage once, not on every render
+  
   const user = JSON.parse(localStorage.getItem('user'));
 
-  // Fetch tasks only once when component mounts
+  
   useEffect(() => {
     const loadTasks = async () => {
       if (!user || !user.id) return;
       
       try {
         setLoading(true);
-        // Fetch only tasks that belong to the current user
+        
         const data = await fetchTasks(user.id);
         setTasks(data);
         setFilteredTasks(data);
@@ -35,10 +35,10 @@ function Dashboard({ onLogout }) {
     };
     
     loadTasks();
-    // This effect runs only once when component mounts
+   
   }, []);
 
-  // Apply filter when filter or tasks change
+ 
   useEffect(() => {
     if (filter === 'all') {
       setFilteredTasks(tasks);
@@ -50,7 +50,7 @@ function Dashboard({ onLogout }) {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    // أول مرة يفتح فيها المستخدم، لو مفعل الدارك مود قبل كده منخليه يفضل مفعل
+    
     const savedMode = localStorage.getItem('dark-mode') === 'true';
     setIsDarkMode(savedMode);
     if (savedMode) document.body.classList.add('dark-mode');
