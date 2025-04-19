@@ -1,0 +1,171 @@
+/* dashboard.css - تنسيقات صفحة لوحة التحكم */
+.dashboard-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .app-header {
+    background: linear-gradient(120deg, var(--secondary-color), var(--primary-dark));
+    color: var(--text-light);
+    padding: .25rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .logo h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  
+  .user-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  
+  .welcome-text {
+    font-weight: 500;
+  }
+  
+  .btn-logout {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--text-light);
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    transition: all var(--transition-normal);
+  }
+  
+  .btn-logout:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+  }
+  
+  .btn-delete-account {
+    background-color: #e53935;
+    color: rgb(119, 160, 232);
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-delete-account:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+  }
+  
+  .dashboard-content {
+    flex: 1;
+    padding: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .dashboard-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+  
+  .filters {
+    display: flex;
+    gap: 0.75rem;
+  }
+  
+  .filter-btn {
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    padding: 0.625rem 1.25rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .filter-btn:hover {
+    background-color: var(--primary-light);
+    color: var(--text-light);
+    border-color: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(124, 58, 237, 0.2);
+  }
+  
+  .filter-btn.active {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 10px rgba(124, 58, 237, 0.25);
+  }
+  
+  .btn-add {
+    background: linear-gradient(to right, var(--secondary-color), #45ec24);
+    color: var(--text-light);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all var(--transition-normal);
+    box-shadow: 0 4px 10px rgba(3, 3, 3, 0.2);
+    
+  }
+  
+  
+  .btn-add:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(1, 1, 1, 0.3);
+    animation: addButtonPulse 1.5s infinite;
+  }
+  
+  .loading-spinner {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-muted);
+    font-size: 1.25rem;
+  }
+  
+  .no-tasks {
+    text-align: center;
+    padding: 5rem 0;
+    color: var(--text-muted);
+    font-size: 1.25rem;
+  }
+  
+  .tasks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.75rem;
+  }
+  
+  /* Loading Animation */
+  .loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+  
+  .loading-spinner::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--primary-color);
+    animation: spinner 1s infinite linear;
+  }

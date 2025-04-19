@@ -1,0 +1,22 @@
+
+
+
+@import 'variables.css';
+
+
+@import 'reset.css';
+
+
+@import 'animations.css';
+
+
+@import 'login.css';
+@import 'dashboard.css';
+@import 'task-card.css';
+@import 'add-task.css';
+
+
+@import 'dark-mode.css';
+
+
+@import 'responsive.css';
